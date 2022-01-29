@@ -5,7 +5,7 @@ from django.urls import reverse
 
 class Blog(models.Model):
     title = models.CharField(max_length=250)
-    author = models.ForeignKey('Blogger', on_delete=models.SET_NULL, null=True)
+    blogger = models.ForeignKey('Blogger', on_delete=models.SET_NULL, null=True)
     description = models.TextField()
     post_date = models.DateField(default= date.today)
 
